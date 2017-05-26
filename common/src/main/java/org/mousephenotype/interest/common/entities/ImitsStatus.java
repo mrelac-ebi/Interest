@@ -1,14 +1,14 @@
-package org.mousephenotype.interest.entities;
+package org.mousephenotype.interest.common.entities;
 
 import java.util.Date;
 
 /**
  * Created by mrelac on 12/05/2017.
  */
-public class ContactGene {
+public class ImitsStatus {
     private int pk;
-    private int contactPk;
-    private int genePk;
+    private String status;
+    private boolean active;
     private Date updatedAt;
 
     public int getPk() {
@@ -19,20 +19,20 @@ public class ContactGene {
         this.pk = pk;
     }
 
-    public int getContactPk() {
-        return contactPk;
+    public String getStatus() {
+        return status;
     }
 
-    public void setContactPk(int contactPk) {
-        this.contactPk = contactPk;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public int getGenePk() {
-        return genePk;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setGenePk(int genePk) {
-        this.genePk = genePk;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public Date getUpdatedAt() {

@@ -1,6 +1,6 @@
-package org.mousephenotype.interest.rowmappers;
+package org.mousephenotype.interest.common.rowmappers;
 
-import org.mousephenotype.interest.entities.ImitsStatus;
+import org.mousephenotype.interest.common.entities.Sent;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * Created by mrelac on 12/05/2017.
  */
-public class ImitsStatusRowMapper implements RowMapper<ImitsStatus> {
+public class SentRowMapper implements RowMapper<Sent> {
 
     /**
      * Implementations must implement this method to map each row of data
@@ -24,15 +24,18 @@ public class ImitsStatusRowMapper implements RowMapper<ImitsStatus> {
      *                      column values (that is, there's no need to catch SQLException)
      */
     @Override
-    public ImitsStatus mapRow(ResultSet rs, int rowNum) throws SQLException {
-        ImitsStatus imitsStatus = new ImitsStatus();
+    public Sent mapRow(ResultSet rs, int rowNum) throws SQLException {
+        Sent sent = new Sent();
 
-        imitsStatus.setPk(rs.getInt("pk"));
-        imitsStatus.setStatus((rs.getString("status")));
-        int active = rs.getInt("active");
-        imitsStatus.setActive(active > 0 ? true : false);
-        imitsStatus.setUpdatedAt(new Date(rs.getTimestamp("updated_at").getTime()));
+        sent.setPk(rs.getInt("pk"));
+        sent.setComponentPk(rs.getInt("component_pk"));
+        sent.setContactPk(rs.getInt("contact_pk"));
+        sent.setGenePk(rs.getInt("sent_pk"));
+        sent.setStatusPk(rs.getInt("status_pk"));
+        sent.setSubject((rs.getString("subject")));
+        sent.setBody((rs.getString("body")));
+        sent.setUpdatedAt(new Date(rs.getTimestamp("updated_at").getTime()));
 
-        return imitsStatus;
+        return sent;
     }
 }

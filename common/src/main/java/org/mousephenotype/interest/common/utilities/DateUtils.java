@@ -1,4 +1,4 @@
-package org.mousephenotype.interest.utilities;
+package org.mousephenotype.interest.common.utilities;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;

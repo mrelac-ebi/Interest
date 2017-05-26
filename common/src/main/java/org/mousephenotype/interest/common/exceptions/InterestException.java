@@ -14,7 +14,7 @@
  * License.
  ******************************************************************************/
 
-package org.mousephenotype.interest.exceptions;
+package org.mousephenotype.interest.common.exceptions;
 
 import org.springframework.http.HttpStatus;
 

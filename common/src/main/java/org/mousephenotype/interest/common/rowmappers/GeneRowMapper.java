@@ -1,6 +1,6 @@
-package org.mousephenotype.interest.rowmappers;
+package org.mousephenotype.interest.common.rowmappers;
 
-import org.mousephenotype.interest.entities.ContactGene;
+import org.mousephenotype.interest.common.entities.Gene;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * Created by mrelac on 12/05/2017.
  */
-public class ContactGeneRowMapper implements RowMapper<ContactGene> {
+public class GeneRowMapper implements RowMapper<Gene> {
 
     /**
      * Implementations must implement this method to map each row of data
@@ -24,14 +24,13 @@ public class ContactGeneRowMapper implements RowMapper<ContactGene> {
      *                      column values (that is, there's no need to catch SQLException)
      */
     @Override
-    public ContactGene mapRow(ResultSet rs, int rowNum) throws SQLException {
-        ContactGene contactGene = new ContactGene();
+    public Gene mapRow(ResultSet rs, int rowNum) throws SQLException {
+        Gene gene = new Gene();
 
-        contactGene.setPk(rs.getInt("pk"));
-        contactGene.setContactPk(rs.getInt("contact_pk"));
-        contactGene.setGenePk(rs.getInt("gene_pk"));
-        contactGene.setUpdatedAt(new Date(rs.getTimestamp("updated_at").getTime()));
+        gene.setMgiAccessionId((rs.getString("mgi_accession_id")));
+        gene.setPk(rs.getInt("pk"));
+        gene.setUpdatedAt(new Date(rs.getTimestamp("updated_at").getTime()));
 
-        return contactGene;
+        return gene;
     }
 }

@@ -1,6 +1,6 @@
-package org.mousephenotype.interest.rowmappers;
+package org.mousephenotype.interest.common.rowmappers;
 
-import org.mousephenotype.interest.entities.Gene;
+import org.mousephenotype.interest.common.entities.StatusImitsStatus;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * Created by mrelac on 12/05/2017.
  */
-public class GeneRowMapper implements RowMapper<Gene> {
+public class StatusImitsStatusRowMapper implements RowMapper<StatusImitsStatus> {
 
     /**
      * Implementations must implement this method to map each row of data
@@ -24,13 +24,14 @@ public class GeneRowMapper implements RowMapper<Gene> {
      *                      column values (that is, there's no need to catch SQLException)
      */
     @Override
-    public Gene mapRow(ResultSet rs, int rowNum) throws SQLException {
-        Gene gene = new Gene();
+    public StatusImitsStatus mapRow(ResultSet rs, int rowNum) throws SQLException {
+        StatusImitsStatus status = new StatusImitsStatus();
 
-        gene.setMgiAccessionId((rs.getString("mgi_accession_id")));
-        gene.setPk(rs.getInt("pk"));
-        gene.setUpdatedAt(new Date(rs.getTimestamp("updated_at").getTime()));
+        status.setPk(rs.getInt("pk"));
+        status.setStatusPk(rs.getInt("status_pk"));
+        status.setImitsStatusPk(rs.getInt("imits_status_pk"));
+        status.setUpdatedAt(new Date(rs.getTimestamp("updated_at").getTime()));
 
-        return gene;
+        return status;
     }
 }

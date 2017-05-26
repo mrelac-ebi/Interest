@@ -1,4 +1,4 @@
-package org.mousephenotype.interest.utilities;
+package org.mousephenotype.interest.common.utilities;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

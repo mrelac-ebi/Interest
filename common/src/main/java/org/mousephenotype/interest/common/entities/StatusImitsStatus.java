@@ -1,4 +1,4 @@
-package org.mousephenotype.interest.entities;
+package org.mousephenotype.interest.common.entities;
 
 import java.util.Date;
 

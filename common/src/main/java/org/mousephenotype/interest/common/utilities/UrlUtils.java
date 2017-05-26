@@ -14,7 +14,7 @@
  *  License.
  ******************************************************************************/
 
-package org.mousephenotype.interest.utilities;
+package org.mousephenotype.interest.common.utilities;
 
 import java.io.IOException;
 import java.net.URL;

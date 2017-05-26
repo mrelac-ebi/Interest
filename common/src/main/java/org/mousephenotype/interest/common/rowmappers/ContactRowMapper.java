@@ -1,6 +1,6 @@
-package org.mousephenotype.interest.rowmappers;
+package org.mousephenotype.interest.common.rowmappers;
 
-import org.mousephenotype.interest.entities.Interest;
+import org.mousephenotype.interest.common.entities.Contact;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * Created by mrelac on 12/05/2017.
  */
-public class InterestRowMapper implements RowMapper<Interest> {
+public class ContactRowMapper implements RowMapper<Contact> {
 
     /**
      * Implementations must implement this method to map each row of data
@@ -24,17 +24,15 @@ public class InterestRowMapper implements RowMapper<Interest> {
      *                      column values (that is, there's no need to catch SQLException)
      */
     @Override
-    public Interest mapRow(ResultSet rs, int rowNum) throws SQLException {
-        Interest interest = new Interest();
+    public Contact mapRow(ResultSet rs, int rowNum) throws SQLException {
+        Contact contact = new Contact();
 
-        interest.setContactPk(rs.getInt("contact_pk"));
-        interest.setAddress(rs.getString("address"));
+        contact.setPk(rs.getInt("pk"));
+        contact.setAddress((rs.getString("address")));
         int active = rs.getInt("active");
-        interest.setActive(active > 0 ? true : false);
-        interest.setGenePk(rs.getInt("gene_pk"));
-        interest.setMgiAccessionId(rs.getString("mgi_accession_id"));
-        interest.setUpdatedAt(new Date(rs.getTimestamp("updated_at").getTime()));
+        contact.setActive(active > 0 ? true : false);
+        contact.setUpdatedAt(new Date(rs.getTimestamp("updated_at").getTime()));
 
-        return interest;
+        return contact;
     }
 }

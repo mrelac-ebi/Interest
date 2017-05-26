@@ -1,15 +1,13 @@
-package org.mousephenotype.interest.entities;
+package org.mousephenotype.interest.common.entities;
 
 import java.util.Date;
 
 /**
  * Created by mrelac on 12/05/2017.
- *
- * This class contains the possible components of interest (e.g. 'gene', 'phenotype', 'disease')
  */
-public class Component {
+public class Gene {
     private int pk;
-    private String name;
+    private String mgiAccessionId;
     private Date updatedAt;
 
     public int getPk() {
@@ -20,12 +18,12 @@ public class Component {
         this.pk = pk;
     }
 
-    public String getName() {
-        return name;
+    public String getMgiAccessionId() {
+        return mgiAccessionId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMgiAccessionId(String mgiAccessionId) {
+        this.mgiAccessionId = mgiAccessionId;
     }
 
     public Date getUpdatedAt() {

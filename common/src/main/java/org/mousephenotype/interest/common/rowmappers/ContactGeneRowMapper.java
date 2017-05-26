@@ -1,6 +1,6 @@
-package org.mousephenotype.interest.rowmappers;
+package org.mousephenotype.interest.common.rowmappers;
 
-import org.mousephenotype.interest.entities.Sent;
+import org.mousephenotype.interest.common.entities.ContactGene;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * Created by mrelac on 12/05/2017.
  */
-public class SentRowMapper implements RowMapper<Sent> {
+public class ContactGeneRowMapper implements RowMapper<ContactGene> {
 
     /**
      * Implementations must implement this method to map each row of data
@@ -24,18 +24,14 @@ public class SentRowMapper implements RowMapper<Sent> {
      *                      column values (that is, there's no need to catch SQLException)
      */
     @Override
-    public Sent mapRow(ResultSet rs, int rowNum) throws SQLException {
-        Sent sent = new Sent();
+    public ContactGene mapRow(ResultSet rs, int rowNum) throws SQLException {
+        ContactGene contactGene = new ContactGene();
 
-        sent.setPk(rs.getInt("pk"));
-        sent.setComponentPk(rs.getInt("component_pk"));
-        sent.setContactPk(rs.getInt("contact_pk"));
-        sent.setGenePk(rs.getInt("sent_pk"));
-        sent.setStatusPk(rs.getInt("status_pk"));
-        sent.setSubject((rs.getString("subject")));
-        sent.setBody((rs.getString("body")));
-        sent.setUpdatedAt(new Date(rs.getTimestamp("updated_at").getTime()));
+        contactGene.setPk(rs.getInt("pk"));
+        contactGene.setContactPk(rs.getInt("contact_pk"));
+        contactGene.setGenePk(rs.getInt("gene_pk"));
+        contactGene.setUpdatedAt(new Date(rs.getTimestamp("updated_at").getTime()));
 
-        return sent;
+        return contactGene;
     }
 }

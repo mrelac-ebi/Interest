@@ -1,8 +1,9 @@
-package org.mousephenotype.interest.utilities;
+package org.mousephenotype.interest.common.utilities;
 
-import org.mousephenotype.interest.entities.*;
-import org.mousephenotype.interest.exceptions.InterestException;
-import org.mousephenotype.interest.rowmappers.*;
+import com.sun.istack.internal.NotNull;
+import org.mousephenotype.interest.common.entities.*;
+import org.mousephenotype.interest.common.rowmappers.*;
+import org.mousephenotype.interest.common.exceptions.InterestException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
@@ -13,7 +14,6 @@ import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 import javax.inject.Inject;
 import javax.sql.DataSource;
-import javax.validation.constraints.NotNull;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

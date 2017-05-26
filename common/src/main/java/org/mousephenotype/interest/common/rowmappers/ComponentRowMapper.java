@@ -1,6 +1,6 @@
-package org.mousephenotype.interest.rowmappers;
+package org.mousephenotype.interest.common.rowmappers;
 
-import org.mousephenotype.interest.entities.Component;
+import org.mousephenotype.interest.common.entities.Component;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

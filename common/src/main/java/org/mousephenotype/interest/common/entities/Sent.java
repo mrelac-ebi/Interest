@@ -1,18 +1,18 @@
-package org.mousephenotype.interest.entities;
+package org.mousephenotype.interest.common.entities;
 
 import java.util.Date;
 
 /**
  * Created by mrelac on 12/05/2017.
  */
-public class Log {
+public class Sent {
     private int pk;
     private int componentPk;
     private int contactPk;
-    private int imitsStatusPk;
-    private int sentPk;
+    private int genePk;
     private int statusPk;
-    private String message;
+    private String subject;
+    private String body;
     private Date updatedAt;
 
     public int getPk() {
@@ -39,20 +39,12 @@ public class Log {
         this.contactPk = contactPk;
     }
 
-    public int getImitsStatusPk() {
-        return imitsStatusPk;
+    public int getGenePk() {
+        return genePk;
     }
 
-    public void setImitsStatusPk(int imitsStatusPk) {
-        this.imitsStatusPk = imitsStatusPk;
-    }
-
-    public int getSentPk() {
-        return sentPk;
-    }
-
-    public void setSentPk(int sentPk) {
-        this.sentPk = sentPk;
+    public void setGenePk(int genePk) {
+        this.genePk = genePk;
     }
 
     public int getStatusPk() {
@@ -63,12 +55,20 @@ public class Log {
         this.statusPk = statusPk;
     }
 
-    public String getMessage() {
-        return message;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
     }
 
     public Date getUpdatedAt() {

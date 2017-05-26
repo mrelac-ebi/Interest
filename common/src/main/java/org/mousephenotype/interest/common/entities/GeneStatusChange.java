@@ -1,4 +1,4 @@
-package org.mousephenotype.interest.entities;
+package org.mousephenotype.interest.common.entities;
 
 /**
  * Created by mrelac on 22/05/2017.

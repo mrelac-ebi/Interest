@@ -1,6 +1,6 @@
-package org.mousephenotype.interest.rowmappers;
+package org.mousephenotype.interest.common.rowmappers;
 
-import org.mousephenotype.interest.entities.Contact;
+import org.mousephenotype.interest.common.entities.Log;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * Created by mrelac on 12/05/2017.
  */
-public class ContactRowMapper implements RowMapper<Contact> {
+public class LogRowMapper implements RowMapper<Log> {
 
     /**
      * Implementations must implement this method to map each row of data
@@ -24,15 +24,18 @@ public class ContactRowMapper implements RowMapper<Contact> {
      *                      column values (that is, there's no need to catch SQLException)
      */
     @Override
-    public Contact mapRow(ResultSet rs, int rowNum) throws SQLException {
-        Contact contact = new Contact();
+    public Log mapRow(ResultSet rs, int rowNum) throws SQLException {
+        Log log = new Log();
 
-        contact.setPk(rs.getInt("pk"));
-        contact.setAddress((rs.getString("address")));
-        int active = rs.getInt("active");
-        contact.setActive(active > 0 ? true : false);
-        contact.setUpdatedAt(new Date(rs.getTimestamp("updated_at").getTime()));
+        log.setPk(rs.getInt("pk"));
+        log.setContactPk(rs.getInt("contact_pk"));
+        log.setSentPk(rs.getInt("sent_pk"));
+        log.setStatusPk(rs.getInt("status_pk"));
+        log.setImitsStatusPk(rs.getInt("imits_status_pk"));
+        log.setComponentPk(rs.getInt("component_pk"));
+        log.setMessage((rs.getString("message")));
+        log.setUpdatedAt(new Date(rs.getTimestamp("updated_at").getTime()));
 
-        return contact;
+        return log;
     }
 }
