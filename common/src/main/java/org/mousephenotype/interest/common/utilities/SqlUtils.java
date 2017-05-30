@@ -1,6 +1,5 @@
 package org.mousephenotype.interest.common.utilities;
 
-import com.sun.istack.internal.NotNull;
 import org.mousephenotype.interest.common.entities.*;
 import org.mousephenotype.interest.common.rowmappers.*;
 import org.mousephenotype.interest.common.exceptions.InterestException;
@@ -14,6 +13,7 @@ import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 import javax.inject.Inject;
 import javax.sql.DataSource;
+import javax.validation.constraints.NotNull;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
