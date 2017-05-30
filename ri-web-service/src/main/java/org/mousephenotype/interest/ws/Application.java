@@ -1,4 +1,4 @@
-package org.mousephenotype.interest;
+package org.mousephenotype.interest.ws;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

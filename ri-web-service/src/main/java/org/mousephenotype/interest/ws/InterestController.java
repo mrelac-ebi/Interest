@@ -14,7 +14,7 @@
  *  License.
  ******************************************************************************/
 
-package org.mousephenotype.interest;
+package org.mousephenotype.interest.ws;
 
 import org.apache.commons.validator.routines.EmailValidator;
 import org.mousephenotype.interest.entities.Component;

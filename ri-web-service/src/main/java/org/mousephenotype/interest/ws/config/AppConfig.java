@@ -1,4 +1,4 @@
-package org.mousephenotype.interest.config;
+package org.mousephenotype.interest.ws.config;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.mousephenotype.interest.utilities.SqlUtils;
